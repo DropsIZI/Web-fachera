@@ -1,0 +1,125 @@
+body {
+    min-height: 100vh;
+    background: linear-gradient(120deg, #0f2027, #2c5364, #00ffe7, #ff00ea, #2c5364, #0f2027);
+    background-size: 400% 400%;
+    animation: fondoEpic 15s ease-in-out infinite;
+}
+
+@keyframes fondoEpic {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+.hero {
+    background: url('https://via.placeholder.com/1920x600') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.btn-discord {
+    background-color: #5865F2;
+    color: white;
+    border: none;
+}
+
+.btn-discord:hover {
+    background-color: #4752c4;
+}
+
+.gif-zone img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Animación de resplandor y borde épico para las cartas */
+.card {
+    transition: 
+        transform 0.3s cubic-bezier(.25,.8,.25,1), 
+        box-shadow 0.3s cubic-bezier(.25,.8,.25,1);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.card:hover {
+    transform: translateY(-15px) scale(1.07) rotate(-2deg);
+    box-shadow: 0 0 32px 8px #00ffe7, 0 8px 32px rgba(0,0,0,0.4);
+    border-color: #00ffe7;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    z-index: 0;
+    border-radius: 1rem;
+    background: linear-gradient(120deg, #00ffe7 0%, #ff00ea 100%);
+    opacity: 0.5;
+    filter: blur(12px);
+    transition: opacity 0.3s;
+    pointer-events: none;
+    animation: shine 2s linear infinite;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+@keyframes shine {
+    0% { filter: blur(12px) brightness(1); }
+    50% { filter: blur(16px) brightness(1.5); }
+    100% { filter: blur(12px) brightness(1); }
+}
+
+/* Opcional: animación de brillo en la imagen */
+.card-img-top {
+    transition: filter 0.4s;
+}
+.card:hover .card-img-top {
+    filter: brightness(1.2) drop-shadow(0 0 12px #00ffe7);
+}
+
+.card-title {
+    font-size: 1.25rem;
+}
+
+.card-text {
+    font-size: 1rem;
+}
+
+.card-body {
+    position: relative;
+    z-index: 1;
+}
+
+.titulo-separador {
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+    animation: glow 2s infinite alternate;
+    /* Delineado negro delgado */
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+}
+.titulo-separador span {
+    background: linear-gradient(90deg, #00ffe7, #ff00ea, #00ffe7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+@keyframes glow {
+    0% { text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; }
+    100% { text-shadow: -1.5px -1.5px 0 #000, 1.5px -1.5px 0 #000, -1.5px 1.5px 0 #000, 1.5px 1.5px 0 #000; }
+}
