@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mural Gamer - Clips y Fotos Graciosas</title>
+    <style>
+        body {
+            background: #181a1b;
+            color: #fff;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+        }
+        .mural-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            padding: 40px 10px;
+        }
+        .mural-item {
+            background: #23272a;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+            overflow: hidden;
+            width: 320px;
+            max-width: 90vw;
+            transition: transform 0.2s;
+        }
+        .mural-item:hover {
+            transform: scale(1.04);
+        }
+        .mural-item img, .mural-item video {
+            width: 100%;
+            display: block;
+        }
+        .caption {
+            padding: 12px;
+            font-size: 1.1em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mural Gamer 🎮</h1>
+    <div class="mural-container">
+        <!-- Ejemplo de foto graciosa -->
+        <div class="mural-item">
+            <img src="https://i.imgur.com/4M34hi2.jpg" alt="Foto graciosa gamer">
+            <div class="caption">Cuando tu compa dice que es pro y muere primero 😂</div>
+        </div>
+        <!-- Ejemplo de clip gracioso -->
+        <div class="mural-item">
+            <video controls>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+            <div class="caption">Clip: El fail más épico de la partida 🤣</div>
+        </div>
+        <!-- Agrega más fotos o clips aquí -->
+    </div>
+</body>
+</html>
